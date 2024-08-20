@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <>
       <div
-        className="bg-mainBg px-[12px] sm:px-[50px] md:px-[100px] w-full font-poppins w-[100%] mt-[-90px]"
+        className="bg-pattern1 sm:bg-mainBg bg-pattern2 px-[12px] sm:px-[50px] md:px-[100px] w-full font-poppins w-[100%] mt-[-90px]"
       >
         <div id='home' className="w-[100%] flex justify-center items-center pt-[150px]">
           <div className="flex lg:w-[70%] flex-col justify-center items-center">
@@ -40,7 +40,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="w-[100%] pb-[40px] md:pb-[0px] md:px-[50px]">
+        <div className="w-[100%] bg-pattern2 pb-[40px] md:pb-[0px] md:px-[50px]">
           <img className="" src={stats} />
         </div>
 
