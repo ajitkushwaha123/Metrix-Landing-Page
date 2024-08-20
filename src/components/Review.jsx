@@ -75,10 +75,10 @@ const Review = () => {
   ];
 
   return (
-    <div id="our-customers" className="pt-[50px] overflow-x-hidden md:pt-[50px]">
+    <div id="our-customers" className="pt-[50px] px-[15px] bg-pattern1 overflow-x-hidden md:pt-[50px]">
       <Title preTitle="Our" title="Customers" />
 
-      <div className="py-[40px] md:py-[80px] bg-pattern1">
+      <div className="py-[40px] md:py-[80px]">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
