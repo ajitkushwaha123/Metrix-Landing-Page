@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <nav
       // id="home"
-      className={`w-full font-poppins sticky relative top-0 z-auto md:px-[80px] px-[10px] py-2 md:py-3 flex justify-between items-center navbar ${
+      className={`w-full overflow-hidden z-10 font-poppins sticky relative top-0 z-auto md:px-[80px] px-[10px] py-2 md:py-3 flex justify-between items-center navbar ${
         isScrolled
           ? "bg-white shadow-sm z-100 border-2 h-[60px] sm:h-[80px]"
           : "bg-transparent"

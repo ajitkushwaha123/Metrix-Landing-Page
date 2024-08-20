@@ -100,12 +100,12 @@ const BrandCarousel = () => {
   };
 
   return (
-    <div className="tp-brand-4__area overflow-x-hidden bg-pattern1 fix py-[50px] md:py-[70px] h-auto justify-enter items-center flex-row cursor-pinter outline-none border-none">
+    <div className="tp-brand-4__area z-100 overflow-x-hidden bg-pattern1 fix py-[50px] md:py-[70px] h-auto justify-enter items-center flex-row cursor-pinter outline-none border-none">
       <h1 className="text-center justify-center flex items-center sm:text-[60px] text-[40px] text-btn font-poppins font-semibold pb-10">
         <Title className="w-[100%]" preTitle="Our" title="Clients" />
       </h1>
       <div className="container-fluid gx-0">
-        <div className="tp-brand-4-active">
+        <div className="tp-brand-4-active relative z-1">
           <Slider {...settings}>
             {BRAND_IMAGES.map((image, index) => (
               <div key={index} className="tp-brand-4__item h-[124px]">

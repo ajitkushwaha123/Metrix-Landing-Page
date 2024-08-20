@@ -29,7 +29,7 @@ const ContactForm = () => {
       <Title preTitle={"Book"} title={"Free Demo"} />
       <form
         onSubmit={submitHandler}
-        className="md:w-[40%] pb-[40px] shadow-lg rounded-lg shadow-indigo-500/40"
+        className="md:min-w-[60%] max-w-[480px] pb-[40px] shadow-lg rounded-lg shadow-indigo-500/40"
       >
         <div className="mt-4 grid rounded-lg px-[30px] py-[40px] grid-cols-2 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
           <div className="col-span-2">
