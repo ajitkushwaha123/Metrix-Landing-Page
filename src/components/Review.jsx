@@ -13,7 +13,7 @@ const Review = () => {
       imgSrc:
         "https://lh3.googleusercontent.com/a-/ALV-UjWdiqLds-TdHl8_IltN1R1NAkPV2ruWgJ-q2Ib7GFn_J_mavalzHw=s64-c-rp-mo-ba2-br100",
       title: "Ambuj Sharma",
-      designation: "Professional Plan",
+      designation: "Professional Plan~",
       review:
         "Kravy ne hume apne inventory management ko optimize karne mein bahut madad ki hai, ab hume kabhi stockouts ka samna nahi karna padta",
     },
@@ -75,10 +75,10 @@ const Review = () => {
   ];
 
   return (
-    <div id="our-customers" className="pt-[50px]">
+    <div id="our-customers" className="pt-[50px] md:pt-[50px]">
       <Title preTitle="Our" title="Customers" />
 
-      <div className="py-[80px] bg-pattern1">
+      <div className="py-[40px] md:py-[80px] bg-pattern1">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -161,7 +161,7 @@ const Review = () => {
           href="https://www.google.com/search?q=pizza+9&sca_esv=991ca55629cb7d36&sca_upv=1&sxsrf=ADLYWIJawqPXysUKNMbXfQQ0bpmahyDxDA%3A1715700502747&ei=FoNDZq2ULdn3seMPz8yV8Ak&ved=0ahUKEwit94a4uo2GAxXZe2wGHU9mBZ4Q4dUDCBA&uact=5&oq=pizza+9&gs_lp=Egxnd3Mtd2l6LXNlcnAiB3BpenphIDkyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyChAAGLADGNYEGEcyDRAAGIAEGLADGEMYigUyDRAAGIAEGLADGEMYigUyDRAAGIAEGLADGEMYigUyDRAAGIAEGLADGEMYigUyDRAAGIAEGLADGEMYigUyDRAAGIAEGLADGEMYigUyDRAAGIAEGLADGEMYigUyDhAAGLADGOQCGNYE2AEBMg4QABiwAxjkAhjWBNgBATIZEC4YgAQYsAMY0QMYQxjHARjIAxiKBdgBAjIZEC4YgAQYsAMYQxjHARjIAxiKBRivAdgBAjIZEC4YgAQYsAMYQxjHARjIAxiKBRivAdgBAjIZEC4YgAQYsAMYQxjHARjIAxiKBRivAdgBAkhKUABYAHABeAGQAQCYAQCgAQCqAQC4AQPIAQCYAgGgAgiYAwCIBgGQBhK6BgYIARABGAm6BgYIAhABGAiSBwExoAcA&sclient=gws-wiz-serp&lqi=CgdwaXp6YSA5IgOIAQFInNSQ3I25gIAIWhkQABABGAAYASIHcGl6emEgOSoGCAIQABABkgEKcmVzdGF1cmFudKoBPBABKgsiB3BpenphIDkoADIeEAEiGg0MiP2ZdX1q265b377HjhFa_Xz71bAll1W5MgsQAiIHcGl6emEgOQ#lkt=LocalPoiReviews&rlimm=12997184429820642054"
           className="flex justify-center items-center pt-[60px]"
         >
-          <Button
+          {/* <Button
             title={"More Reviews"}
             hoverColor={"white"}
             bgColor={"primary"}
@@ -170,7 +170,7 @@ const Review = () => {
             hoverText={"primary"}
             bgHover={"white"}
             hoverBorder={"primary"}
-          />
+          /> */}
         </a>
       </div>
     </div>

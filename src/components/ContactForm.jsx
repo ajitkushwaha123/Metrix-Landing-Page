@@ -23,8 +23,8 @@ const ContactForm = () => {
 
   return (
     <div
-      id="franchise"
-      className="w-full flex flex-col py-[100px] justify-center items-center px-[15px] sm:px-[100px] bg-pattern2 "
+      id="contact-us"
+      className="w-full flex flex-col py-[50px] md:py-[100px] justify-center items-center px-[15px] sm:px-[100px] bg-pattern2 "
     >
       <Title preTitle={"Book"} title={"Free Demo"} />
       <form
@@ -63,7 +63,7 @@ const ContactForm = () => {
           </div>
 
           <div className="col-span-2">
-            <label className="font-medium">Country</label>
+            <label className="font-medium">City</label>
             <input
               onChange={(e) => setCountry(e.target.value)}
               type="text"
@@ -73,7 +73,7 @@ const ContactForm = () => {
           </div>
 
           <div className="col-span-2">
-            <label className="font-medium">State</label>
+            <label className="font-medium">Restourant Name</label>
             <input
               onChange={(e) => setState(e.target.value)}
               type="text"
@@ -87,7 +87,7 @@ const ContactForm = () => {
           <Button
             className="text-center items-center"
             // func={"sumbitHandler"}
-            title={"GET FRANCHISE"}
+            title={"Book Demo"}
             hoverColor={"white"}
             bgColor={"primary"}
             borderColor={"white"}

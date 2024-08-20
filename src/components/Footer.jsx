@@ -105,7 +105,7 @@ export default function Example() {
           ))}
         </div>
         <p className="mt-8 text-center text-base text-gray-400">
-          &copy; 2024 Pizza9, Inc. All rights reserved.
+          &copy; 2024 Kravy - By MagicScale , Inc. All rights reserved.
         </p>
       </div>
     </footer>

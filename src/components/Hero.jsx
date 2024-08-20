@@ -10,35 +10,37 @@ import { bg, stats } from '../assets';
 const Hero = () => {
   return (
     <>
-      <div className="bg-mainBg px-[100px] w-full font-poppins w-[100%] mt-[-90px]">
-        <div className="w-[100%] flex justify-center items-center pt-[150px]">
-          <div className="flex w-[60%] flex-col justify-center items-center">
-            <p className="text-[3rem] text-center font-bold">
+      <div
+        className="bg-mainBg px-[12px] sm:px-[50px] md:px-[100px] w-full font-poppins w-[100%] mt-[-90px]"
+      >
+        <div id='home' className="w-[100%] flex justify-center items-center pt-[150px]">
+          <div className="flex lg:w-[70%] flex-col justify-center items-center">
+            <p className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] text-center font-bold">
               The <span className="text-primary">Powerful</span> tools for your{" "}
               <span className="text-primary">Restaurant</span> business
             </p>
 
-            <p className="mt-[30px] text-[26px] text-center font-semibold text-slate-400">
+            <p className="mt-[30px] text-[16px] px-[20px] sm:text-[26px] text-center font-semibold text-slate-400">
               Track, Analyze your Business with Kravy - MagicScale
             </p>
 
             <div className="flex py-[40px] items-center">
               <div className="font-poppins">
-                <button className="hover:bg-white text-white sm:text-[20px] border-2 border-white flex bg-primary border-2 border-primary hover:border-2 hover:border-primary text-white hover:text-primary font-medium font-poppins justify-center items-center sm:px-6 px-5 sm:py-3 py-3 rounded-lg">
+                <button className="hover:bg-white text-white sm:text-[20px] border-2 border-white flex bg-primary border-2 border-primary hover:border-2 hover:border-primary text-white hover:text-primary font-medium font-poppins justify-center items-center sm:px-6 px-[10px] sm:px-5 py-2 sm:py-3 rounded-lg">
                   <FaShopLock className="mr-[8px]" /> Get Started
                 </button>
               </div>
 
-              <div className="font-poppins ml-[40px]">
-                <button className="hover:bg-primary text-primary sm:text-[20px] border-2 border-[#5570F1] flex bg-white hover:border-2 hover:border-white text-primary hover:text-white font-medium font-poppins justify-center items-center sm:px-6 px-5 sm:py-3 py-3 rounded-lg">
-                  <FaShopLock className="mr-[8px]" /> Register For Free
+              <div className="font-poppins ml-[20px] sm:ml-[40px]">
+                <button className="hover:bg-primary text-primary sm:text-[20px] border-2 border-[#5570F1] flex bg-white hover:border-2 hover:border-white text-primary hover:text-white font-medium font-poppins justify-center items-center sm:px-6 px-5 sm:py-3 py-2 rounded-lg">
+                  <FaShopLock className="mr-[8px]" /> Register
                 </button>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="w-[100%] px-[50px]">
+        <div className="w-[100%] pb-[40px] md:pb-[0px] md:px-[50px]">
           <img className="" src={stats} />
         </div>
 
