@@ -7,7 +7,7 @@ const Pricing = () => {
   return (
     <section
       id="pricing"
-      className="relative bg-pattern2 px-[20px] sm:px-[50px] md:px-[100px] z-10 overflow-hidden bg-white pb-12 pt-5 dark:bg-dark lg:pb-[90px] lg:pt-[70px]"
+      className="relative bg-pattern2 px-[20px] sm:px-[50px] md:px-[100px] overflow-hidden bg-white pb-12 pt-[40px] dark:bg-dark lg:pb-[90px] lg:pt-[70px]"
     >
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">

@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <nav
       // id="home"
-      className={`w-full font-poppins sticky top-0 z-100 md:px-[80px] px-[10px] py-2 md:py-3 flex justify-between items-center navbar ${
+      className={`w-full font-poppins sticky relative top-0 z-auto md:px-[80px] px-[10px] py-2 md:py-3 flex justify-between items-center navbar ${
         isScrolled
           ? "bg-white shadow-sm z-100 border-2 h-[60px] sm:h-[80px]"
           : "bg-transparent"
@@ -48,7 +48,7 @@ const Navbar = () => {
           By MagicScale 🚀
         </div>
       </button> */}
-      <ul className="list-none sm:flex hidden justify-center items-center flex-1">
+      <ul className="list-none md:flex hidden justify-center items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
@@ -61,14 +61,14 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <div className="font-poppins hidden sm:block">
+      <div className="font-poppins hidden md:block">
         <button className="hover:bg-white text-white sm:text-[15px] border-2 border-primary flex bg-primary border-2 border-primary hover:border-2 hover:border-primary text-white hover:text-primary font-medium font-poppins justify-center items-center sm:px-4 px-3 sm:py-2 py-2 rounded-md">
           <FaShopLock className="mr-[8px]" /> Get Started
         </button>
       </div>
-      <div className="sm:hidden flex flex-1 justify-end items-center">
+      <div className="md:hidden flex flex-1 justify-end items-center">
         <a id="#our-customers">
-          <div className="font-poppins sm:hidden">
+          <div className="font-poppins md:hidden">
             <button className="hover:bg-white text-white sm:text-[15px] border-2 border-white flex bg-primary border-2 border-primary hover:border-2 hover:border-primary text-white hover:text-primary font-medium font-poppins justify-center items-center sm:px-4 px-3 sm:py-2 py-2 rounded-md">
               <FaShopLock className="mr-[8px]" /> Get Started
             </button>

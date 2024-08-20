@@ -97,8 +97,8 @@ const Review = () => {
           }
         >
           {testimonials.map((testimonial, index) => (
-            <SwiperSlide key={index} className="mx-[15px]">
-              <div className="w-full max-w-sm flex justify-center items-center flex-shrink-0">
+            <SwiperSlide key={index} className="mx-[15px] -z-10">
+              <div className="w-full max-w-sm -z-10 flex justify-center items-center flex-shrink-0">
                 <div className="p-6 bg-white rounded-4xl min-h-[250px] shadow-lg">
                   <div className="flex mb-6 items-center">
                     <img
