@@ -7,6 +7,7 @@ import Review from './components/Review'
 import Pricing from './components/Pricing'
 import ContactForm from './components/ContactForm'
 import Faqs from './components/Faqs'
+import Features from './components/Features'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <Hero />
       <BrandCarousel />
+      <Features />
       <Pricing />
       <Review />
       <ContactForm />
