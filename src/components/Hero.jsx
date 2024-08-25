@@ -17,7 +17,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="bg-pattern1 font-poppins sm:bg-mainBg bg-pattern2 px-[12px] sm:px-[50px] md:px-[100px] w-full font-poppins w-[100%] mt-[-90px]">
+      <div className="bg-pattern1 bg-[#f7f5ff] bg-no-repeat bg-cover font-poppins bg-pattern2 px-[12px] sm:px-[50px] md:px-[100px] w-full font-poppins w-[100%] mt-[-90px]">
         <div
           id="home"
           className="w-[100%] flex justify-center items-center pt-[150px]"

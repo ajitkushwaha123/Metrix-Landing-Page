@@ -24,7 +24,7 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
       },
       backgroundImage: {
-        mainBg: "url('/src/assets/bg.png')",
+        mainBg: "url('./src/assets/bg.png')",
         pattern1:
           "url('https://shuffle.dev/saturn-assets/images/testimonials/orange-light.png')",
         pattern2:
