@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
-import Button from "./Button";
 import { FaShopLock } from "react-icons/fa6";
 import { GoDotFill } from "react-icons/go";
-import { FaArrowRightToBracket } from "react-icons/fa6";
-
+import { NavLink, redirect } from "react-router-dom";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
@@ -27,6 +25,12 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    window.location.href = "https://kravy.magicscale.in";
+  };
+
+
   return (
     <nav
       // id="home"
@@ -41,7 +45,9 @@ const Navbar = () => {
         alt="kravy"
         className="w-[40px] sm:w-[50px] bg-primary m-2 text-white p-2 rounded-xl h-[40px] sm:h-[50px]"
       />{" "}
-      <span className="text-[30px] hidden lg:block font-bold font-poppins">Kravy</span>
+      <span className="text-[30px] hidden lg:block font-bold font-poppins">
+        Kravy
+      </span>
       <button className="text-white p-0.5 hidden lg:block text-[10px] ml-[10px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-2xl border-2 ">
         <div className="flex bg-black justify-center items-center px-[10px] py-1 font-poppins rounded-2xl">
           <GoDotFill className="mr-[6px] text-[14px]" />
@@ -62,9 +68,9 @@ const Navbar = () => {
         ))}
       </ul>
       <div className="font-poppins hidden md:block">
-        <button className="hover:bg-white text-white sm:text-[15px] border-2 border-primary flex bg-primary border-2 border-primary hover:border-2 hover:border-primary text-white hover:text-primary font-medium font-poppins justify-center items-center sm:px-4 px-3 sm:py-2 py-2 rounded-md">
-          <FaShopLock className="mr-[8px]" /> Get Started
-        </button>
+          <button onClick={(e) => {handleClick(e)}} className="hover:bg-white text-white sm:text-[15px] border-2 border-white flex bg-primary border-2 border-primary hover:border-2 hover:border-primary text-white hover:text-primary font-medium font-poppins justify-center items-center sm:px-4 px-3 sm:py-2 py-2 rounded-md">
+            <FaShopLock className="mr-[8px]" /> Get Started
+          </button>
       </div>
       <div className="md:hidden flex flex-1 justify-end items-center">
         <a id="#our-customers">
