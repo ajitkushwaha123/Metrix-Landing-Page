@@ -7,6 +7,8 @@ import { CiGrid41 } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { FaQuestionCircle } from "react-icons/fa";
 import { MdOutlinePriceChange } from "react-icons/md";
+import { FaQrcode } from "react-icons/fa6";
+
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
@@ -14,32 +16,32 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
    const navLinks = [
-    {
-      id: "home",
-      title: "Home",
-      icon: <CiHome />,
-    },
-    {
-      id: "feature",
-      title: "Features",
-      icon: <CiGrid41 />,
-    },
-    {
-      id: "our-customers",
-      title: "Our Customers",
-      icon: <CiUser />,
-    },
-    {
-      id: "faqs",
-      title: "FAQS",
-      icon: <FaQuestionCircle />,
-    },
-    {
-      id: "pricing",
-      title: "Pricing",
-      icon: <MdOutlinePriceChange />,
-    },
-  ];
+     {
+       id: "home",
+       title: "Home",
+       icon: <CiHome />,
+     },
+     {
+       id: "feature",
+       title: "Features",
+       icon: <CiGrid41 />,
+     },
+     {
+       id: "our-customers",
+       title: "Our Customers",
+       icon: <CiUser />,
+     },
+     {
+       id: "faqs",
+       title: "FAQS",
+       icon: <FaQrcode />,
+     },
+     {
+       id: "pricing",
+       title: "Pricing",
+       icon: <MdOutlinePriceChange />,
+     },
+   ];
 
 
   useEffect(() => {
@@ -147,7 +149,7 @@ const Navbar = () => {
                 <li
                   key={nav.id}
                   className={`font-poppins flex justify-center items-center font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-blue-400" : "text-primary"
+                    active === nav.title ? "text-indigo-500" : "text-primary"
                   }  mb-4`}
                   onClick={() => {
                     setActive(nav.title), setToggle(!toggle);

@@ -6,8 +6,8 @@ import bg from "./bg.png";
 import feature1 from "./feature1.png";
 import feature3 from "./feature3.png";
 import feature2 from "./feature2.png";
+import customer from "./customer.png";
+import invoiceImg from "./invoice.jpg";
+import billing from "./menu.jpg";
 
-
-
-
-export { logo, menu, close, stats, bg, feature1, feature2, feature3 };
+export { logo, billing, close, menu , stats , invoiceImg , bg, customer , feature1, feature2, feature3 };

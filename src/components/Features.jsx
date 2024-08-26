@@ -6,7 +6,7 @@ import Button from "./Button";
 
 import { CiBoxList } from "react-icons/ci";
 import Title from "./Title";
-import { feature1, feature2, stats } from "../assets";
+import { customer, feature1, feature2, invoiceImg, stats , billing } from "../assets";
 
 export default function Features() {
   return (
@@ -58,7 +58,7 @@ export default function Features() {
                     hoverText={"primary"}
                     bgHover={"white"}
                     hoverBorder={"primary"}
-                    title={"More Info"}
+                    title={"Explore Features"}
                   />
                 </div>
               </ul>
@@ -76,7 +76,7 @@ export default function Features() {
         >
           <div className="flex lg:px-[80px] flex-col  lg:flex-row justify-center font-poppins py-[60px] items-center z-10 bg-pattern1 w-[100%] rounded-xl">
             <div className="w-[100%] px-[20px] lg:w-[50%]">
-              <img src={stats} />
+              <img src={customer} />
             </div>
 
             <div className="w-[100%] items-center md:px-[40px] lg:items-start text-center lg:text-start lg:w-[50%] px-[20px] lg:px-[40px]">
@@ -104,7 +104,7 @@ export default function Features() {
                     hoverText={"primary"}
                     bgHover={"white"}
                     hoverBorder={"primary"}
-                    title={"More Info"}
+                    title={"Explore Features"}
                   />
                 </div>
               </ul>
@@ -122,7 +122,7 @@ export default function Features() {
         >
           <div className="flex lg:px-[80px] flex-col  lg:flex-row justify-center font-poppins py-[60px] items-center z-10 bg-pattern1 w-[100%] rounded-xl">
             <div className="w-[100%] px-[20px] lg:w-[50%]">
-              <img src={stats} />
+              <img src={billing} />
             </div>
 
             <div className="w-[100%] items-center md:px-[40px] lg:items-start text-center lg:text-start lg:w-[50%] px-[20px] lg:px-[40px]">
@@ -148,7 +148,7 @@ export default function Features() {
                     hoverText={"primary"}
                     bgHover={"white"}
                     hoverBorder={"primary"}
-                    title={"More Info"}
+                    title={"Explore Features"}
                   />
                 </div>
               </ul>
@@ -166,7 +166,7 @@ export default function Features() {
         >
           <div className="flex lg:px-[80px] flex-col  lg:flex-row justify-center font-poppins py-[60px] items-center z-10 bg-pattern1 w-[100%] rounded-xl">
             <div className="w-[100%] px-[20px] lg:w-[50%]">
-              <img src={stats} />
+              <img src={invoiceImg} />
             </div>
 
             <div className="w-[100%] items-center md:px-[40px] lg:items-start text-center lg:text-start lg:w-[50%] px-[20px] lg:px-[40px]">
@@ -193,7 +193,7 @@ export default function Features() {
                     hoverText={"primary"}
                     bgHover={"white"}
                     hoverBorder={"primary"}
-                    title={"More Info"}
+                    title={"Coming Soon"}
                   />
                 </div>
               </ul>
