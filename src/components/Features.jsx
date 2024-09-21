@@ -32,7 +32,7 @@ export default function Features() {
         >
           <div className="flex lg:px-[80px] flex-col  lg:flex-row justify-center font-poppins py-[60px] items-center z-10 bg-pattern1 w-[100%] rounded-xl">
             <div className="w-[100%] px-[20px] lg:w-[50%]">
-              <img src={feature2} />
+              <img alt="Smart-sales-insights-kravy" src={feature2} />
             </div>
 
             <div className="w-[100%] items-center md:px-[40px] lg:items-start text-center lg:text-start lg:w-[50%] px-[20px] lg:px-[40px]">
@@ -76,7 +76,7 @@ export default function Features() {
         >
           <div className="flex lg:px-[80px] flex-col  lg:flex-row justify-center font-poppins py-[60px] items-center z-10 bg-pattern1 w-[100%] rounded-xl">
             <div className="w-[100%] px-[20px] lg:w-[50%]">
-              <img src={customer} />
+              <img alt="customer-dashboard" src={customer} />
             </div>
 
             <div className="w-[100%] items-center md:px-[40px] lg:items-start text-center lg:text-start lg:w-[50%] px-[20px] lg:px-[40px]">
@@ -122,7 +122,7 @@ export default function Features() {
         >
           <div className="flex lg:px-[80px] flex-col  lg:flex-row justify-center font-poppins py-[60px] items-center z-10 bg-pattern1 w-[100%] rounded-xl">
             <div className="w-[100%] px-[20px] lg:w-[50%]">
-              <img src={billing} />
+              <img alt="kravy-billing" src={billing} />
             </div>
 
             <div className="w-[100%] items-center md:px-[40px] lg:items-start text-center lg:text-start lg:w-[50%] px-[20px] lg:px-[40px]">
@@ -166,7 +166,7 @@ export default function Features() {
         >
           <div className="flex lg:px-[80px] flex-col  lg:flex-row justify-center font-poppins py-[60px] items-center z-10 bg-pattern1 w-[100%] rounded-xl">
             <div className="w-[100%] px-[20px] lg:w-[50%]">
-              <img src={invoiceImg} />
+              <img alt="kravy-invoicing" src={invoiceImg} />
             </div>
 
             <div className="w-[100%] items-center md:px-[40px] lg:items-start text-center lg:text-start lg:w-[50%] px-[20px] lg:px-[40px]">

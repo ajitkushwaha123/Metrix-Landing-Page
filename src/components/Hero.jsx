@@ -59,7 +59,7 @@ const Hero = () => {
         </div>
 
         <div className="w-[100%] bg-pattern2 pb-[40px] md:pb-[0px] md:px-[50px]">
-          <img className="" src={stats} />
+          <img alt='kravy-stats' className="" src={stats} />
         </div>
 
         {/* <div className="w-[50%]">

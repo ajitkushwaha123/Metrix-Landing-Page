@@ -122,31 +122,31 @@ const Review = () => {
                     <img
                       className="block mr-1.5"
                       src="https://shuffle.dev/saturn-assets/images/testimonials/star.svg"
-                      alt=""
+                      alt="star.svg"
                       data-config-id="auto-img-22-3"
                     />
                     <img
                       className="block mr-1.5"
                       src="https://shuffle.dev/saturn-assets/images/testimonials/star.svg"
-                      alt=""
+                      alt="star.svg"
                       data-config-id="auto-img-23-3"
                     />
                     <img
                       className="block mr-1.5"
                       src="https://shuffle.dev/saturn-assets/images/testimonials/star.svg"
-                      alt=""
+                      alt="star.svg"
                       data-config-id="auto-img-24-3"
                     />
                     <img
                       className="block mr-1.5"
                       src="https://shuffle.dev/saturn-assets/images/testimonials/star.svg"
-                      alt=""
+                      alt="star.svg"
                       data-config-id="auto-img-25-3"
                     />
                     <img
                       className="block mr-1.5"
                       src="https://shuffle.dev/saturn-assets/images/testimonials/star.svg"
-                      alt=""
+                      alt="star.svg"
                       data-config-id="auto-img-26-3"
                     />
                   </div>
