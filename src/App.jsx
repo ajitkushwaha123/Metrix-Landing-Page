@@ -1,14 +1,10 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Footer from "./components/Footer";
-import BrandCarousel from "./components/ClientCarousel";
-import Review from "./components/Review";
-import Pricing from "./components/Pricing";
-import ContactForm from "./components/ContactForm";
-import Faqs from "./components/Faqs";
-import Features from "./components/Features";
 import { Helmet } from "react-helmet";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Pages/Home/Home";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Cart from "./Pages/Cart/Cart";
 
 function App() {
   return (
@@ -26,16 +22,17 @@ function App() {
       </Helmet>
 
       <Navbar />
-      <Hero />
-      <BrandCarousel />
-      <Features />
-      <Pricing />
-      <Review />
-      <ContactForm />
-      <Faqs />
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </BrowserRouter>
       <Footer />
     </>
   );
 }
 
 export default App;
+

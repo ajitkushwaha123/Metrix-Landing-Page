@@ -36,6 +36,7 @@ const Pricing = () => {
               subscription="7 Days"
               description="Perfect plan to starting out , to test and understand the features of kravy ."
               buttonText="Choose Trial Plan"
+              paymentlink="https://payments.cashfree.com/forms/kravy"
             >
               <List>1 Outlet</List>
               <List>Complete Access of CRM</List>
@@ -127,29 +128,31 @@ const PricingCard = ({
           {description}
         </p>
         <div className="mb-9 flex flex-col gap-[14px]">{children}</div>
-        {active ? (
-          <Button
-            hoverColor={"white"}
-            bgColor={"primary"}
-            borderColor={"white"}
-            textColor={"white"}
-            hoverText={"primary"}
-            bgHover={"white"}
-            hoverBorder={"primary"}
-            title={buttonText}
-          />
-        ) : (
-          <Button
-            hoverColor={"white"}
-            bgColor={"white"}
-            borderColor={"primary"}
-            textColor={"primary"}
-            hoverText={"white"}
-            bgHover={"primary"}
-            hoverBorder={"white"}
-            title={buttonText}
-          />
-        )}
+        <a href="https://payments.cashfree.com/forms/kravy">
+          {active ? (
+            <Button
+              hoverColor={"white"}
+              bgColor={"primary"}
+              borderColor={"white"}
+              textColor={"white"}
+              hoverText={"primary"}
+              bgHover={"white"}
+              hoverBorder={"primary"}
+              title={buttonText}
+            />
+          ) : (
+            <Button
+              hoverColor={"white"}
+              bgColor={"white"}
+              borderColor={"primary"}
+              textColor={"primary"}
+              hoverText={"white"}
+              bgHover={"primary"}
+              hoverBorder={"white"}
+              title={buttonText}
+            />
+          )}
+        </a>
         <div>
           <span className="absolute right-0 top-7 z-[-1]">
             <svg
