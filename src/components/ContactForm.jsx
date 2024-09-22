@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import Title from "./Title";
 import Button from "./Button";
-import toast , {Toaster} from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
+import LoadingButton from "../LoadingButton/LoadingButton";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
@@ -10,25 +11,28 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [city, setCity] = useState("");
   const [restourantName, setRestourantName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const API_URL = "https://api.magicscale.in/api";
 
   const formSubmit = async (values) => {
     console.log(values);
+    setIsLoading(true);
 
-    try{
-      const res = await axios.post(`${API_URL}/contact` , values);
+    try {
+      const res = await axios.post(`${API_URL}/contact`, values);
 
       console.log(res);
       toast.success("Form Submitted Successfully... !");
-    }
-    catch(err){
+      setIsLoading(false);
+    } catch (err) {
       toast.error(`Error Submitting Form... ! ${err}`);
+      setIsLoading(false);
     }
-  }
+  };
 
   const submitHandler = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     const user = {
       name,
@@ -42,8 +46,6 @@ const ContactForm = () => {
 
     await formSubmit(user);
   };
-
-
 
   return (
     <div
@@ -109,18 +111,22 @@ const ContactForm = () => {
         </div>
 
         <div className="w-[100%] flex justify-center items-center">
-          <Button
-            className="text-center items-center"
-            // func={"sumbitHandler"}
-            title={"Book Demo"}
-            hoverColor={"white"}
-            bgColor={"primary"}
-            borderColor={"white"}
-            textColor={"white"}
-            hoverText={"primary"}
-            bgHover={"white"}
-            hoverBorder={"primary"}
-          />
+          {isLoading ? (
+            <LoadingButton />
+          ) : (
+            <Button
+              className="text-center items-center"
+              func={"sumbitHandler"}
+              title={"Book Demo"}
+              hoverColor={"white"}
+              bgColor={"primary"}
+              borderColor={"white"}
+              textColor={"white"}
+              hoverText={"primary"}
+              bgHover={"white"}
+              hoverBorder={"primary"}
+            />
+          )}
         </div>
       </form>
     </div>
