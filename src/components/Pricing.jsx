@@ -31,33 +31,39 @@ const Pricing = () => {
         <div className="-mx-2 flex  flex-wrap justify-center">
           <div className="-mx-2 flex flex-wrap">
             <PricingCard
-              type="Starter"
-              price="3000"
-              subscription="3 months"
-              description="Perfect plan to starting out , Ideal for small restaurants and cafes ."
-              buttonText="Choose Startrer Plan"
+              type="7 Days Trial"
+              price="Free"
+              subscription="7 Days"
+              description="Perfect plan to starting out , to test and understand the features of kravy ."
+              buttonText="Choose Trial Plan"
             >
               <List>1 Outlet</List>
               <List>Complete Access of CRM</List>
-              <List>3 Month access</List>
+              <List>7 Days Trial</List>
               <List>Instant Customer support</List>
               <List>Uploaded Products</List>
               <List>Software training</List>
+              <List>Customized Reporting</List>
+              <List>Free Zomato swiggy account handling</List>
+              <List>Free Kravy Account Setup</List>
             </PricingCard>
             <PricingCard
-            active
+              active
               type="Growth"
               price="5000"
               subscription="6 months"
               description="Ideal for growing restaurants, manage multiple outlets and boost your sales."
               buttonText="Choose Growth Plan"
             >
-              <List>3 Outlets</List>
+              <List>1 Outlet</List>
               <List>Complete Access of CRM</List>
-              <List>3 Month access</List>
-              <List>All Features of Starter Plan</List>
+              <List>6 Months </List>
+              <List>Instant Customer support</List>
+              <List>Uploaded Products</List>
               <List>Software training</List>
               <List>Customized Reporting</List>
+              <List>Free Zomato swiggy account handling</List>
+              <List>Free Kravy Account Setup</List>
             </PricingCard>
 
             <PricingCard
@@ -67,12 +73,15 @@ const Pricing = () => {
               description="For large restaurants and chains, manage all your outlets and analytics in one place."
               buttonText="Choose Enterprise Plan"
             >
-              <List>10 Outlets</List>
+              <List>1 Outlet</List>
               <List>Complete Access of CRM</List>
-              <List>3 Month access</List>
-              <List>All Features of Buisness Plan</List>
+              <List>1 Year</List>
+              <List>Instant Customer support</List>
+              <List>Uploaded Products</List>
+              <List>Software training</List>
               <List>Customized Reporting</List>
-              <List>Dedicated Account Manager</List>
+              <List>Free Zomato swiggy account handling</List>
+              <List>Free Kravy Account Setup</List>
             </PricingCard>
           </div>
         </div>
@@ -83,15 +92,12 @@ const Pricing = () => {
 
 export default Pricing;
 
-
-
 const List = ({ children }) => {
   return (
     <p className="text-base text-body-color dark:text-dark-6">{children}</p>
   );
 };
 
-     
 const PricingCard = ({
   children,
   description,
@@ -112,7 +118,7 @@ const PricingCard = ({
           {type}
         </span>
         <h2 className="mb-5 text-[37px] font-bold text-dark dark:text-white">
-          <PriceFormatter price={price} />
+          {price === "Free" ? price : <PriceFormatter price={price} />}
           <span className="text-base font-medium text-body-color dark:text-dark-6">
             / {subscription}
           </span>
@@ -407,4 +413,4 @@ const PricingCard = ({
       </div>
     </div>
   );
-}
+};

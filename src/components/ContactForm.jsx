@@ -11,7 +11,7 @@ const ContactForm = () => {
   const [city, setCity] = useState("");
   const [restourantName, setRestourantName] = useState("");
 
-  const API_URL = "http://localhost:8000/api";
+  const API_URL = "http://api.magicscale.in/api";
 
   const formSubmit = async (values) => {
     console.log(values);
