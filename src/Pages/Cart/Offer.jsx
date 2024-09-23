@@ -1,4 +1,5 @@
 import React from "react";
+import CountdownTimer from "./CountdownTimer";
 
 const Offer = () => {
   return (
@@ -11,6 +12,7 @@ const Offer = () => {
           </p>
         </div>
         <div className="w-[50%]">
+          <CountdownTimer />
         </div>
       </div>
     </div>
