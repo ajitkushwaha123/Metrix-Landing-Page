@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import Cart from "./Pages/Cart/Cart";
 
 function App() {
@@ -29,7 +28,6 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
     </>
   );
 }

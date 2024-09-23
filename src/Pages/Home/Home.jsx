@@ -6,6 +6,7 @@ import Pricing from "../../components/Pricing";
 import Review from "../../components/Review";
 import ContactForm from "../../components/ContactForm";
 import Faqs from "../../components/Faqs";
+import { Footer } from "flowbite-react";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Review />
       <ContactForm />
       <Faqs />
+      <Footer />
     </div>
   );
 };

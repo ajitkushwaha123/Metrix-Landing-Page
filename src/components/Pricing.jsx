@@ -128,7 +128,7 @@ const PricingCard = ({
           {description}
         </p>
         <div className="mb-9 flex flex-col gap-[14px]">{children}</div>
-        <a href={price === "Free" ? "" : ""}>
+        <a href="https://payments.cashfree.com/forms/kravy">
           {active ? (
             <Button
               hoverColor={"white"}
