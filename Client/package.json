@@ -11,6 +11,7 @@
     "generate-sitemap": "node src/sitemap.js"
   },
   "dependencies": {
+    "@cashfreepayments/cashfree-js": "^1.0.5",
     "@nextui-org/react": "^2.4.6",
     "axios": "^1.7.4",
     "flowbite": "^2.5.1",

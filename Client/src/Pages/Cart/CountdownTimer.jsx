@@ -29,37 +29,37 @@ const CountdownTimer = () => {
 
   return (
     <div>
-      <div className="flex text-white items-start justify-center w-full gap-4 count-down-main">
-        <div className="timer border-2 border-white px-2 py-1 rounded-md w-16">
+      <div className="flex text-white items-center justify-center w-full gap-2 md:gap-4 count-down-main">
+        <div className="timer border-2 border-white px-1.5 md:px-2 py-0.5 md:py-1 rounded-md w-16">
           <div className="">
-            <h3 className="countdown-element text-white days font-manrope font-semibold text-2xl text-center">
+            <h3 className="countdown-element text-white days font-manrope font-semibold text-lg md:text-2xl text-center">
               {timeLeft.days}
             </h3>
           </div>
           <p className="text-sm font-normal mt-1 text-center w-full">days</p>
         </div>
-        <h3 className="font-manrope font-semibold text-2xl">:</h3>
-        <div className="timer border-2 border-white px-2 py-1 rounded-md w-16">
+        <h3 className="font-manrope font-semibold text-lg md:text-2xl">:</h3>
+        <div className="timer border-2 border-white px-1.5 md:px-2 py-0.5 md:py-1 rounded-md w-16">
           <div className="">
-            <h3 className="countdown-element hours font-manrope font-semibold text-2xl text-center">
+            <h3 className="countdown-element hours font-manrope font-semibold text-lg md:text-2xl text-center">
               {timeLeft.hours}
             </h3>
           </div>
           <p className="text-sm font-normal mt-1 text-center w-full">hours</p>
         </div>
-        <h3 className="font-manrope font-semibold text-2xl">:</h3>
-        <div className="timer border-2 border-white py-1 rounded-md w-16">
+        <h3 className="font-manrope font-semibold text-lg md:text-2xl">:</h3>
+        <div className="timer border-2 border-white px-2 md:px-2 py-0.5 md:py-1 rounded-md w-16">
           <div className="flex justify-center items-center flex-col">
-            <h3 className="countdown-element minutes font-manrope font-semibold text-2xl text-center">
+            <h3 className="countdown-element minutes font-manrope font-semibold text-lg md:text-2xl text-center">
               {timeLeft.minutes}
             </h3>
           </div>
           <p className="text-sm font-normal mt-1 text-center w-full">min</p>
         </div>
-        <h3 className="font-manrope font-semibold text-2xl">:</h3>
-        <div className="timer border-2 border-white rounded-md py-1 w-16">
+        <h3 className="font-manrope font-semibold text-lg md:text-2xl">:</h3>
+        <div className="timer border-2 border-white px-2 md:px-2 rounded-md py-0.5 md:py-1 w-16">
           <div className="">
-            <h3 className="countdown-element seconds font-manrope font-semibold text-2xl text-center">
+            <h3 className="countdown-element seconds font-manrope font-semibold text-lg md:text-2xl text-center">
               {timeLeft.seconds}
             </h3>
           </div>

@@ -2,6 +2,7 @@ import React from "react";
 import Title from "./Title";
 import PriceFormatter from "../helper/PriceFormatter";
 import Button from "./Button";
+import { NavLink } from "react-router-dom";
 
 const Pricing = () => {
   return (
@@ -37,6 +38,7 @@ const Pricing = () => {
               description="Perfect plan to starting out , to test and understand the features of kravy ."
               buttonText="Choose Trial Plan"
               paymentlink="https://payments.cashfree.com/forms/kravy"
+              plan={"free"}
             >
               <List>1 Outlet</List>
               <List>Complete Access of CRM</List>
@@ -55,6 +57,7 @@ const Pricing = () => {
               subscription="6 months"
               description="Ideal for growing restaurants, manage multiple outlets and boost your sales."
               buttonText="Choose Growth Plan"
+              plan={"growth"}
             >
               <List>1 Outlet</List>
               <List>Complete Access of CRM</List>
@@ -73,6 +76,7 @@ const Pricing = () => {
               subscription="1 Year"
               description="For large restaurants and chains, manage all your outlets and analytics in one place."
               buttonText="Choose Enterprise Plan"
+              plan={"enterprise"}
             >
               <List>1 Outlet</List>
               <List>Complete Access of CRM</List>
@@ -107,6 +111,7 @@ const PricingCard = ({
   subscription,
   buttonText,
   active,
+  plan
 }) => {
   return (
     <div className="w-full px-4 md:w-1/2 lg:w-1/3">
@@ -128,7 +133,7 @@ const PricingCard = ({
           {description}
         </p>
         <div className="mb-9 flex flex-col gap-[14px]">{children}</div>
-        <a href="https://payments.cashfree.com/forms/kravy">
+        <NavLink to={`/cart/${plan}`}>
           {active ? (
             <Button
               hoverColor={"white"}
@@ -152,7 +157,7 @@ const PricingCard = ({
               title={buttonText}
             />
           )}
-        </a>
+        </NavLink>
         <div>
           <span className="absolute right-0 top-7 z-[-1]">
             <svg
