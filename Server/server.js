@@ -15,8 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const corsOptions = {
-  origin: ["https://billing.magiscale.in", "http://localhost:5173"],
-  optionsSuccessStatus: 200, 
+  origin: ["https://billing.magicscale.in", "http://localhost:5173"],
+  optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
