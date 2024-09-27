@@ -7,9 +7,11 @@ dotenv.config();
 
 const payment = express();
 
+const Environment = process.env.CASHFREE_ENVIRONMENT;
+
 Cashfree.XClientId = process.env.CASHFREE_CLIENT_ID;
 Cashfree.XClientSecret = process.env.CASHFREE_CLIENT_SECRET;
-Cashfree.XEnvironment = Cashfree.Environment.SANDBOX;
+Cashfree.XEnvironment = `Cashfree.Environment.${Environment}`;
 
 const getOrderId = async () => {
   const uniqueId = crypto.randomBytes(16).toString("hex");

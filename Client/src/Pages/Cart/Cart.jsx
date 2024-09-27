@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { load } from "@cashfreepayments/cashfree-js";
 import Offer from "./Offer";
 import PriceFormatter from "../../helper/PriceFormatter";
-import { useParams } from "react-router-dom"; // Corrected import
+import { useParams } from "react-router-dom"; 
 import axios from "axios";
 
 const Cart = () => {
@@ -11,9 +11,12 @@ const Cart = () => {
   const [orderId, setOrderId] = useState();
   const options = { year: "numeric", month: "long", day: "numeric" };
 
+  const apiUrl = import.meta.env.VITE_API_URL;
+  const environment = import.meta.env.VITE_ENVIRONMENT;
+
   let cashfree;
 
-  const { id: plan } = useParams(); // Destructured useParams
+  const { id: plan } = useParams(); 
   console.log(plan);
 
   const cartDetails = [
@@ -70,7 +73,7 @@ const Cart = () => {
     const initialiseSdk = async () => {
       try {
         cashfree = await load({
-          mode: "sandbox", //or production
+          mode: environment, 
         });
         console.log("Cashfree SDK initialized");
       } catch (error) {
@@ -83,7 +86,9 @@ const Cart = () => {
 
   const getSessionId = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/payment");
+      console.log("hi" , apiUrl);
+      console.log("Fetching session ID");
+      const res = await axios.get(`${apiUrl}/api/payment`);
       console.log("Response:", res);
 
       if (res.data && res.data.payment_session_id) {
@@ -98,7 +103,7 @@ const Cart = () => {
 
   const verifyPayment = async () => {
     try {
-      let res = await axios.post("http://localhost:8000/api/payment/verify", {
+      let res = await axios.post(`${process.env.REACT_APP_API_URL}/api/payment/verify`, {
         orderId: orderId,
       });
 

@@ -7,14 +7,19 @@ import crypto from "crypto";
 import { Cashfree } from "cashfree-pg";
 import router from "./routes/route.js";
 
-
 dotenv.config();
 
 const app = express();
 
 app.use(express.json());
-app.use(cors());
 app.use(express.urlencoded({ extended: true }));
+
+const corsOptions = {
+  origin: ["https://billing.magiscale.in", "http://localhost:5173"],
+  optionsSuccessStatus: 200, 
+};
+
+app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 8000;
 
@@ -22,7 +27,7 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-app.get("/" , (req, res) => {
+app.get("/", (req, res) => {
   res.send("Server is running");
 });
 
