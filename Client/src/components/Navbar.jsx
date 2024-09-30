@@ -2,12 +2,8 @@ import { useState, useEffect } from "react";
 import { close, logo, menu } from "../assets";
 import { FaShopLock } from "react-icons/fa6";
 import { GoDotFill } from "react-icons/go";
-import { CiHome } from "react-icons/ci";
-import { CiGrid41 } from "react-icons/ci";
-import { CiUser } from "react-icons/ci";
-import { FaQuestionCircle } from "react-icons/fa";
-import { MdOutlinePriceChange } from "react-icons/md";
-import { FaQrcode } from "react-icons/fa6";
+import { navLinks } from "../constants";
+import Icon from "./Icon";
 
 
 const Navbar = () => {
@@ -15,33 +11,33 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-   const navLinks = [
-     {
-       id: "home",
-       title: "Home",
-       icon: <CiHome />,
-     },
-     {
-       id: "feature",
-       title: "Features",
-       icon: <CiGrid41 />,
-     },
-     {
-       id: "our-customers",
-       title: "Our Customers",
-       icon: <CiUser />,
-     },
-     {
-       id: "faqs",
-       title: "FAQS",
-       icon: <FaQrcode />,
-     },
-     {
-       id: "pricing",
-       title: "Pricing",
-       icon: <MdOutlinePriceChange />,
-     },
-   ];
+  //  const navLinks = [
+  //    {
+  //      id: "home",
+  //      title: "Home",
+  //      icon: <CiHome />,
+  //    },
+  //    {
+  //      id: "feature",
+  //      title: "Features",
+  //      icon: <CiGrid41 />,
+  //    },
+  //    {
+  //      id: "our-customers",
+  //      title: "Our Customers",
+  //      icon: <CiUser />,
+  //    },
+  //    {
+  //      id: "faqs",
+  //      title: "FAQS",
+  //      icon: <FaQrcode />,
+  //    },
+  //    {
+  //      id: "pricing",
+  //      title: "Pricing",
+  //      icon: <MdOutlinePriceChange />,
+  //    },
+  //  ];
 
 
   useEffect(() => {
@@ -155,7 +151,10 @@ const Navbar = () => {
                     setActive(nav.title), setToggle(!toggle);
                   }}
                 >
-                  <p className="mr-[10px]">{nav.icon}</p>{" "}
+                  <p className="mr-[10px]">
+                    
+                    <Icon name={nav.icon} />
+                  </p>
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}

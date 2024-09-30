@@ -1,11 +1,22 @@
 import "./App.css";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Navbar from "./components/Navbar";
 import Cart from "./Pages/Cart/Cart";
+import Checkout from "./Pages/Cart/Checkout";
+import PaymentStatus from "./Pages/Cart/PaymentStatus";
+import CheckInternet from "./Modal/CheckInternet";
 
 function App() {
+  const [online, setOnline] = useState(navigator.onLine);
+
+  useEffect(() => {
+    window.addEventListener("online", () => setOnline(true));
+    window.addEventListener("offline", () => setOnline(false));
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -20,12 +31,18 @@ function App() {
         />
       </Helmet>
 
+      {/* {online ? "online" : "false"} */}
+
       <Navbar />
 
       <BrowserRouter>
+        <div>{online ? null : <CheckInternet isOpen={true} />}</div>
+
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/cart/:id" element={<Cart />} />
+          <Route path="/cart/:subscriptionType" element={<Cart />} />
+          <Route path="/checkout/:subscriptionType" element={<Checkout />} />
+          <Route path="/payment-status/:orderId" element={<PaymentStatus />} />
         </Routes>
       </BrowserRouter>
     </>
@@ -33,4 +50,3 @@ function App() {
 }
 
 export default App;
-

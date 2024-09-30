@@ -9,5 +9,12 @@ import feature2 from "./feature2.png";
 import customer from "./customer.png";
 import invoiceImg from "./invoice.jpg";
 import billing from "./menu.jpg";
+import paymentSuccessAnim from "./paymentSuccessAnim.gif";
+import paymentFailedAnim from "./paymentFailedAnim.gif";
+import paymentVerifyAnim from "./paymentVerifyAnim.gif";
+import success from "./success.gif";
+import failed from "./failed.gif";
 
-export { logo, billing, close, menu , stats , invoiceImg , bg, customer , feature1, feature2, feature3 };
+export { logo, billing, close, menu , stats , invoiceImg , bg, customer , feature1, feature2, feature3 , paymentFailedAnim
+     , paymentSuccessAnim , paymentVerifyAnim , success , failed
+ };

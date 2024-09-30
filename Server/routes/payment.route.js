@@ -7,10 +7,9 @@ dotenv.config();
 
 const payment = express();
 
-
 Cashfree.XClientId = process.env.CASHFREE_CLIENT_ID;
 Cashfree.XClientSecret = process.env.CASHFREE_CLIENT_SECRET;
-Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
+Cashfree.XEnvironment = Cashfree.Environment.SANDBOX;
 
 const getOrderId = async () => {
   const uniqueId = crypto.randomBytes(16).toString("hex");
@@ -61,16 +60,19 @@ payment.get("/", async (req, res) => {
   }
 });
 
-payment.get("/verify", async (req, res) => {
-  const { orderId } = req.query; // Use req.query for GET requests
-  console.log("orderId", orderId);
+payment.post("/verify", async (req, res) => {
+  const { orderId } = req.body;
+  console.log("orderId:", orderId);
+
   try {
     const response = await Cashfree.PGOrderFetchPayments("2023-08-01", orderId);
-    res.send(response.data);
+    console.log("Response:", response.data);  
+    res.json(response.data);
   } catch (err) {
     console.error("Error verifying payment:", err);
-    res.status(500).send("Error verifying payment");
+    res.status(500).json({ error: "Error verifying payment" });
   }
 });
+
 
 export default payment;
