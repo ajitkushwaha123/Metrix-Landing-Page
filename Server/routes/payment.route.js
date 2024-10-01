@@ -31,10 +31,7 @@ const createOrder = async (data) => {
       customer_name: data.name,
       customer_email: data.email,
       customer_phone: data.phone,
-    },
-    order_meta: {
-      return_url: "http://localhost:3000/payment/verify",
-    },
+    }
   };
 
   console.log("Order request:", request);
