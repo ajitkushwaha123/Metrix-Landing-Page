@@ -30,15 +30,22 @@ export const getSubscriptionsBysubscriptionType = async (subscriptionType) => {
 };
 
 export const submitCheckoutDetails = async (values) => {
+  console.log("Submitting :", values);
   try{
 
-    if(!values.name || !values.company || !values.email || !values.phone || !values.address || !values.city || !values.state || !values.zip){
+    if(!values.name || !values.company || !values.email || !values.phone || !values.address || !values.city || !values.state || !values.postalCode){
       return Promise.reject({ status : "false" , message : "All fields are required"});
     }
 
     const response = await axios.post(`${API_URL}/api/checkout` , values);
-    return Promise.resolve({ status : "true" , message : response.data.message});
+    return Promise.resolve({
+      status: "true",
+      message: response.data.message || "An error occurred",
+    });
   }catch(err){
-    return Promise.reject({ status : "false" , message : err.message});
+    return Promise.reject({
+      status: "false",
+      message: err.message || "An error occurred",
+    });
   }
 }

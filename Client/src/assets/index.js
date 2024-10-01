@@ -14,7 +14,8 @@ import paymentFailedAnim from "./paymentFailedAnim.gif";
 import paymentVerifyAnim from "./paymentVerifyAnim.gif";
 import success from "./success.gif";
 import failed from "./failed.gif";
+import loader from "./loader.gif";
 
 export { logo, billing, close, menu , stats , invoiceImg , bg, customer , feature1, feature2, feature3 , paymentFailedAnim
-     , paymentSuccessAnim , paymentVerifyAnim , success , failed
+     , paymentSuccessAnim , paymentVerifyAnim , success , failed , loader
  };

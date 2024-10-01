@@ -4,7 +4,8 @@ import { Checkout} from "../models/checkout.model.js";
 const checkout = express.Router();
 
 checkout.post("/", async (req, res) => {
-  const { name, company, email, phone, address, city, state, zip } = req.body;
+  console.log(req.body);
+  const { name, company, email, phone, address, city, state, postalCode, cartTotal } = req.body;
 
   if (
     !name ||
@@ -14,29 +15,59 @@ checkout.post("/", async (req, res) => {
     !address ||
     !city ||
     !state ||
-    !zip
+    !postalCode ||
+    !cartTotal
   ) {
+    console.log("All fields are required", req.body);
     return res.status(422).json({ error: "All fields are required" });
   }
 
   try {
-    const checkout = new Checkout({
-      name,
-      company,
-      email,
-      phone,
-      address,
-      city,
-      state,
-      zip,
-    });
+    const emailExist = await Checkout.findOne({ email: email });
 
-    await checkout.save();
+    if (emailExist) {
+      console.log(emailExist);
 
-    res.status(201).json({ status: "true", message: `Successfully posted ${checkout}` });
+      await Checkout.findOneAndUpdate(
+        { email: email },
+        {
+          name,
+          company,
+          phone,
+          address,
+          city,
+          state,
+          postalCode,
+          cartTotal,
+        },
+        { new: true }
+      );
+
+      console.log("Updated checkout details", emailExist);
+
+      return res.status(200).json({ status: "true", message: "Details updated successfully" });
+    } else {
+      const checkout = new Checkout({
+        name,
+        company,
+        email,
+        phone,
+        address,
+        city,
+        state,
+        postalCode,
+        cartTotal,
+      });
+
+      await checkout.save();
+
+      console.log("New checkout details", checkout);
+
+      return res.status(201).json({ status: "true", message: "Checkout Details Saved Successfully" });
+    }
   } catch (err) {
     console.log(err);
-    res.status(500).json({ status : "false" , error: "Internal server error" });
+    return res.status(500).json({ status: "false", error: "Internal server error" });
   }
 });
 

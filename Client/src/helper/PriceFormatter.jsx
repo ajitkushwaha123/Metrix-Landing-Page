@@ -1,6 +1,6 @@
 import React from "react";
 
-const PriceFormatter = ({ price = 10000 }) => {
+const PriceFormatter = ({ price = 0 }) => {
   return (
     <span>
       {new Intl.NumberFormat("en-IN", {

@@ -39,6 +39,10 @@ const Cart = () => {
   };
 
   useEffect(() => {
+    localStorage.setItem("cartDetails", JSON.stringify(cartData));
+  } , [cartData])
+
+  useEffect(() => {
     getSubsBySubscriptionType();
   }, [subscriptionType]);
 
@@ -87,80 +91,77 @@ const Cart = () => {
           Your Cart
         </p>
 
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : (
-          <div>
-            <div className="w-full lg:flex justify-between items-start">
-              <div className="bg-[#fff] mb-[20px] lg:mb-[0px] p-[28px] w-[100%] lg:w-[63.66%] rounded-xl">
-                <h3 className="text-indigo-500 text-[22px] pb-[20px] font-semibold">
-                  {cartData?.name}
-                </h3>
-                <p className="border-[1px] border-slate-100"></p>
+        <div>
+          <div className="w-full lg:flex justify-between items-start">
+            <div className="bg-[#fff] mb-[20px] lg:mb-[0px] p-[28px] w-[100%] lg:w-[63.66%] rounded-xl">
+              <h3 className="text-indigo-500 text-[22px] pb-[20px] font-semibold">
+                {cartData?.name}
+              </h3>
+              <p className="border-[1px] border-slate-100"></p>
 
-                <div className="lg:flex justify-between items-center">
-                  <input
-                    className="outline-none my-[20px] h-[46px] px-[10px] font-medium border-[1px] border-black-300 rounded-lg"
-                    value={
-                      cartData?.duration === 7
-                        ? "7 Days"
-                        : cartData?.duration === 180
-                        ? "6 Months"
-                        : "1 Year"
-                    }
-                    type="text"
-                  />
+              <div className="lg:flex justify-between items-center">
+                <input
+                  className="outline-none my-[20px] h-[46px] px-[10px] font-medium border-[1px] border-black-300 rounded-lg"
+                  value={
+                    cartData?.duration === 7
+                      ? "7 Days"
+                      : cartData?.duration === 180
+                      ? "6 Months"
+                      : "1 Year"
+                  }
+                  type="text"
+                />
 
-                  <div className="flex justify-between lg:justify-end w-[100%] lg:w-[60%] items-center">
-                    <p className="bg-[#008361] text-[13px] sm:text-[17px] px-[12px] py-[4px] sm:px-[20px] sm:py-[6px] rounded-xl font-semibold text-white">
-                      Save <PriceFormatter price={cartData.price*1.3} />
+                <div className="flex justify-between lg:justify-end w-[100%] lg:w-[60%] items-center">
+                  <p className="bg-[#008361] text-[13px] sm:text-[17px] px-[12px] py-[4px] sm:px-[20px] sm:py-[6px] rounded-xl font-semibold text-white">
+                    Save <PriceFormatter price={cartData.price * 1.3} />
+                  </p>
+
+                  <div className="ml-[20px]">
+                    <p className="text-indigo-500 font-medium text-[16px] lg:text-[18px]">
+                      <PriceFormatter
+                        price={calculatePricePerMonth(
+                          cartData?.duration,
+                          cartData?.price -
+                            (cartData?.discountPercentage * cartData?.price) /
+                              100 +
+                            cartData?.price * (cartData?.taxPercentage / 100)
+                        )}
+                      />{" "}
+                      /Month
                     </p>
-
-                    <div className="ml-[20px]">
-                      <p className="text-indigo-500 font-medium text-[16px] lg:text-[18px]">
-                        <PriceFormatter
-                          price={calculatePricePerMonth(
-                            cartData?.duration,
-                            cartData?.price -
-                              (cartData?.discountPercentage * cartData?.price) /
-                                100 +
-                              cartData?.price * (cartData?.taxPercentage / 100)
-                          )}
-                        />{" "}
-                        /Month
-                      </p>
-                      <s className="text-black font-medium text-[11px] sm:text-[14px]">
-                        <PriceFormatter
-                          price={calculatePricePerMonth(
-                            cartData?.duration,
-                            cartData?.price
-                          )}
-                        />
-                        /Month
-                      </s>
-                    </div>
+                    <s className="text-black font-medium text-[11px] sm:text-[14px]">
+                      <PriceFormatter
+                        price={calculatePricePerMonth(
+                          cartData?.duration,
+                          cartData?.price
+                        )}
+                      />
+                      /Month
+                    </s>
                   </div>
                 </div>
-
-                <p className="pb-[10px] pt-[10px] lg:pt-[0px] text-[14px]">
-                  Renews at{" "}
-                  <PriceFormatter
-                    price={
-                      (calculatePricePerMonth(
-                        cartData?.duration,
-                        cartData?.price -
-                          (cartData?.discountPercentage * cartData?.price) /
-                            100 +
-                          cartData?.price * (cartData?.taxPercentage / 100)
-                      ) *
-                        (100 - cartData?.onRenewPercentageDiscount)) /
-                      100
-                    }
-                  />
-                  /month after {renewAbleDate(cartData?.duration)} days
-                </p>
               </div>
-              <div className="bg-white w-[100%] py-[20px] lg:w-[33.33%] rounded-xl px-[20px] lg:p-[28px]">
+
+              <p className="pb-[10px] pt-[10px] lg:pt-[0px] text-[14px]">
+                Renews at{" "}
+                <PriceFormatter
+                  price={
+                    (calculatePricePerMonth(
+                      cartData?.duration,
+                      cartData?.price -
+                        (cartData?.discountPercentage * cartData?.price) / 100 +
+                        cartData?.price * (cartData?.taxPercentage / 100)
+                    ) *
+                      (100 - cartData?.onRenewPercentageDiscount)) /
+                    100
+                  }
+                />
+                /month after {renewAbleDate(cartData?.duration)} days
+              </p>
+            </div>
+            <div className="bg-white w-[100%] py-[20px] lg:w-[33.33%] rounded-xl px-[20px] lg:p-[28px]">
+              <div>
                 <p className="flex justify-between items-center">
                   <h3 className="font-semibold text-[20px] text-black">
                     Subtotal
@@ -249,7 +250,7 @@ const Cart = () => {
               </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </>
   );

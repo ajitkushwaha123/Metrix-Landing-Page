@@ -29,10 +29,14 @@ const CheckoutSchema = new mongoose.Schema({
         type : String,
         required : true
     },
-    zip : {
+    postalCode : {
         type : String,
         required : true
     },
+    cartTotal : {
+        type : Number,
+    },
+
 } , { timestamps: true });
 
 export const Checkout = mongoose.model("Checkout", CheckoutSchema);

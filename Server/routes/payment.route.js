@@ -9,7 +9,7 @@ const payment = express();
 
 Cashfree.XClientId = process.env.CASHFREE_CLIENT_ID;
 Cashfree.XClientSecret = process.env.CASHFREE_CLIENT_SECRET;
-Cashfree.XEnvironment = Cashfree.Environment.SANDBOX;
+Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
 
 const getOrderId = async () => {
   const uniqueId = crypto.randomBytes(16).toString("hex");
@@ -21,22 +21,23 @@ const getOrderId = async () => {
   return orderId.substr(0, 12);
 };
 
-const createOrder = async () => {
+const createOrder = async (data) => {
+
   const request = {
-    order_amount: "1",
+    order_amount: data.cartTotal,
     order_currency: "INR",
     customer_details: {
       customer_id: await getOrderId(),
-      customer_name: "John Doe",
-      customer_email: "example@gmail.com",
-      customer_phone: "9999999999",
+      customer_name: data.name,
+      customer_email: data.email,
+      customer_phone: data.phone,
     },
     order_meta: {
-      return_url:
-        "https://test.cashfree.com/pgappsdemos/return.php?order_id=order_123",
+      return_url: "http://localhost:3000/payment/verify",
     },
-    order_note: "Test Order",
   };
+
+  console.log("Order request:", request);
 
   try {
     const response = await Cashfree.PGCreateOrder("2023-08-01", request);
@@ -50,9 +51,15 @@ const createOrder = async () => {
   }
 };
 
-payment.get("/", async (req, res) => {
+payment.post("/", async (req, res) => {
+
+  console.log("Creating payment...");
+  console.log("req" , req.body);
+
+  const data = req.body;
+
   try {
-    const resp = await createOrder();
+    const resp = await createOrder(data);
     res.send(resp);
   } catch (err) {
     console.error("Error creating payment:", err);

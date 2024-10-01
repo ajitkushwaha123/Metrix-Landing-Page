@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import PriceFormatter from "../../helper/PriceFormatter";
 import { getSubscriptionsBysubscriptionType } from "../../helper/helper";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom"; // Correct import for useParams
+import { loader } from "../../assets";
 
-const TotalCart = () => {
+const TotalCart = ({ finalCart }) => {
+  // Destructure finalCart from props
   const { subscriptionType } = useParams();
 
   const [cartData, setCartData] = useState({});
@@ -12,22 +14,21 @@ const TotalCart = () => {
   const getSubsBySubscriptionType = async () => {
     setIsLoading(true);
     try {
-      const subscriptionPromise =
-        getSubscriptionsBysubscriptionType(subscriptionType);
-
-      setCartData((prevData) => ({
-        ...prevData,
-        loading: true,
-      }));
-
-      const response = await subscriptionPromise;
+      const response = await getSubscriptionsBysubscriptionType(
+        subscriptionType
+      ); // Await the promise directly
 
       console.log("API Response:", response?.data);
+      finalCartValue(
+        response?.data.price,
+        response?.data.discountPercentage,
+        response?.data.taxPercentage
+      );
       setCartData(response?.data);
-      setIsLoading(false);
     } catch (err) {
-      setIsLoading(false);
       console.log(err);
+    } finally {
+      setIsLoading(false); // Ensure loading state is reset in both success and error cases
     }
   };
 
@@ -40,10 +41,19 @@ const TotalCart = () => {
   };
 
   const [showCoupon, setShowCoupon] = useState(false);
+
+  const finalCartValue = (price, discountPercentage, taxPercentage) => {
+    finalCart(
+      price -
+        percentToAmount(discountPercentage, price) +
+        percentToAmount(taxPercentage, price)
+    );
+  };
+
   return (
     <div className="w-full shadow-lg font-poppins p-[28px] rounded-xl bg-white">
       {isLoading ? (
-        <div>Loading...</div>
+        <div> <img src={loader}/> </div>
       ) : (
         <div>
           <h3 className="font-semibold text-[20px]">Order Summary</h3>
@@ -75,16 +85,17 @@ const TotalCart = () => {
             <h3 className="font-semibold text-[20px]">Subtotal</h3>
             <p className="flex mt-[10px]">
               <del className="text-slate-500">
-                <PriceFormatter
-                  price={cartData?.price}
-                />
+                <PriceFormatter price={cartData?.price} />
               </del>
               <p className="ml-[10px]">
                 <PriceFormatter
-                  price={cartData?.price - percentToAmount(
-                    cartData?.discountPercentage,
-                    cartData?.price
-                  )}
+                  price={
+                    cartData?.price -
+                    percentToAmount(
+                      cartData?.discountPercentage,
+                      cartData?.price
+                    )
+                  }
                 />
               </p>
             </p>

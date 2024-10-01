@@ -10,18 +10,19 @@ import PaymentButton from "./PaymentButton";
 import { submitCheckoutDetails } from "../../helper/helper";
 
 const CheckoutForm = () => {
+
   const [payStatus, setPayStatus] = useState("");
   const [step, setStep] = useState(1);
   const [localStorageData, setLocalStorageData] = useState({});
   const navigate = useNavigate();
+
 
   const getLocalCheckoutData = () => {
     try {
       let checkoutData = localStorage.getItem("checkoutDetails");
       console.log("Checkout data from localStorage:", checkoutData); // Log the checkout data
       const parsedData = checkoutData ? JSON.parse(checkoutData) : {};
-      console.log("Parsed checkout data:", parsedData); // Log the parsed data
-      // setLocalStorageData(parsedData);
+      console.log("Parsed checkout data:", parsedData); 
       return parsedData;
     } catch (error) {
       console.error("Error parsing checkout data from localStorage:", error);
@@ -29,16 +30,35 @@ const CheckoutForm = () => {
     }
   };
 
+  const getLocalCartData = () => {
+    try {
+      let cartData = localStorage.getItem("cartDetails");
+      console.log("Cart data from localStorage:", cartData);
+      const parsedData = cartData ? JSON.parse(cartData) : {};
+      console.log("Parsed cart data:", parsedData);
+      return parsedData;
+    } catch (error) {
+      console.error("Error parsing cart data from localStorage:", error);
+      return {};
+    }
+  };
+
   const formik = useFormik({
     initialValues: {
-      name: getLocalCheckoutData().name || "",
-      company: getLocalCheckoutData().company || "",
-      email: getLocalCheckoutData().email || "",
-      phone: getLocalCheckoutData().phone || "",
-      state: getLocalCheckoutData().state || "",
-      address: getLocalCheckoutData().address || "",
-      city: getLocalCheckoutData().city || "",
-      postalCode: getLocalCheckoutData().postalCode || "",
+      name: getLocalCheckoutData()?.name || "",
+      company: getLocalCheckoutData()?.company || "",
+      email: getLocalCheckoutData()?.email || "",
+      phone: getLocalCheckoutData()?.phone || "",
+      state: getLocalCheckoutData()?.state || "",
+      address: getLocalCheckoutData()?.address || "",
+      city: getLocalCheckoutData()?.city || "",
+      postalCode: getLocalCheckoutData()?.postalCode || "",
+      cartTotal:
+        getLocalCartData()?.price -
+          getLocalCartData()?.price *
+            (getLocalCartData()?.discountPercentage / 100) +
+          getLocalCartData()?.price *
+            (getLocalCartData()?.taxPercentage / 100) || 0,
     },
     validate: checkoutDetailsValidate,
     validateOnBlur: false,
@@ -62,6 +82,8 @@ const CheckoutForm = () => {
     if (Object.keys(errors).length > 0) {
       return;
     }
+
+    console.log("Formik values:", formik.values);
 
     setLocalStorageData(formik.values);
     setStep(2);
@@ -194,7 +216,7 @@ const CheckoutForm = () => {
           </p>
         </div>
 
-        {step === 2 && <PaymentButton />}
+        {step === 2 && <PaymentButton values={formik.values} />}
       </div>
     </div>
   );

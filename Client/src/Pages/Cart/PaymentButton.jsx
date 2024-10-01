@@ -4,11 +4,14 @@ import { load } from "@cashfreepayments/cashfree-js";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-const PaymentButton = () => {
+const PaymentButton = ({values}) => {
   const [orderId, setOrderId] = useState("");
   const apiUrl = import.meta.env.VITE_API_URL;
   const environment = import.meta.env.VITE_ENVIRONMENT;
-  const [paymentTried , setPaymentTried] = useState(false);
+  const [paymentTried , setPaymentTried] = useState(false); 
+  const [paymentData , setPaymentData] = useState(values);
+  
+  console.log("Payment Data:", paymentData);
 
   const navigate = useNavigate();
   const cashfree = useRef(null);
@@ -28,10 +31,10 @@ const PaymentButton = () => {
     initialiseSdk();
   }, [environment]);
 
-  const getSessionData = async () => {
+  const getSessionData = async (paymentData) => {
     try {
       console.log("Fetching session ID");
-      const res = await axios.get(`${apiUrl}/api/payment`);
+      const res = await axios.post(`${apiUrl}/api/payment`  , paymentData);
       console.log("Response:", res);
 
       if (res.data && res.data.payment_session_id) {
@@ -47,7 +50,7 @@ const PaymentButton = () => {
     e.preventDefault();
 
     try {
-      const sessionPromise = getSessionData();
+      const sessionPromise = getSessionData(paymentData);
       toast.promise(sessionPromise, {
         loading: "Initializing Payment ...",
         success: "Payment Initialized ...",
