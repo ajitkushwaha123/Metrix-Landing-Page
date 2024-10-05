@@ -80,12 +80,14 @@ const Navbar = () => {
         <span className="text-[30px] hidden lg:block font-bold font-poppins">
           Kravy
         </span>
-        <button className="text-white p-0.5 hidden lg:block text-[10px] ml-[10px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-2xl border-2 ">
-          <div className="flex bg-black justify-center items-center px-[10px] py-1 font-poppins rounded-2xl">
-            <GoDotFill className="mr-[6px] text-[14px]" />
-            By MagicScale 🚀
-          </div>
-        </button>
+        <a href="https://magicscale.in">
+          <button className="text-white p-0.5 hidden lg:block text-[10px] ml-[10px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-2xl border-2 ">
+            <div className="flex bg-black justify-center items-center px-[10px] py-1 font-poppins rounded-2xl">
+              <GoDotFill className="mr-[6px] text-[14px]" />
+              By MagicScale 🚀
+            </div>
+          </button>
+        </a>
         <ul className="list-none md:flex hidden justify-center items-center flex-1">
           {navLinks.map((nav, index) => (
             <li
@@ -152,7 +154,6 @@ const Navbar = () => {
                   }}
                 >
                   <p className="mr-[10px]">
-                    
                     <Icon name={nav.icon} />
                   </p>
                   <a href={`#${nav.id}`}>{nav.title}</a>

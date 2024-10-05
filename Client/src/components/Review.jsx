@@ -41,7 +41,7 @@ const Review = () => {
       title: "Shobha Yadav",
       designation: "Buisness Plan",
       review:
-        " very user-friendly and customizable. We've been able to tailor it to our specific needs , and now it is used daily into our restourants.",
+        " very user-friendly and customizable. We've been able to tailor it to our specific needs , and now it is used daily into our restaurants.",
     },
 
     {

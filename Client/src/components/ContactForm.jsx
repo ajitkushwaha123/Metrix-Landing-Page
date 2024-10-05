@@ -10,7 +10,7 @@ const ContactForm = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [city, setCity] = useState("");
-  const [restourantName, setRestourantName] = useState("");
+  const [restaurantName, setRestaurantName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const API_URL = "https://api.magicscale.in/api";
@@ -39,7 +39,7 @@ const ContactForm = () => {
       phone,
       email,
       city,
-      restourantName,
+      restaurantName,
     };
 
     // console.log(user);
@@ -100,9 +100,9 @@ const ContactForm = () => {
           </div>
 
           <div className="col-span-2">
-            <label className="font-medium">Restourant Name</label>
+            <label className="font-medium">Restaurant Name</label>
             <input
-              onChange={(e) => setRestourantName(e.target.value)}
+              onChange={(e) => setRestaurantName(e.target.value)}
               type="text"
               required
               className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
