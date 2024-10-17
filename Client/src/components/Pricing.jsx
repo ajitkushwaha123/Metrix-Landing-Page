@@ -1,4 +1,4 @@
-import React , {useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Title from "./Title";
 import PriceFormatter from "../helper/PriceFormatter";
 import Button from "./Button";
@@ -20,7 +20,7 @@ const Pricing = () => {
 
   useEffect(() => {
     getAllSubscription();
-  } , [])
+  }, []);
 
   return (
     <section
@@ -131,7 +131,7 @@ const PricingCard = ({
   subscriptionType,
 }) => {
   return (
-    <div className="w-full px-4 md:w-1/2 lg:w-1/3">
+    <div id="pricing" className="w-full px-4 md:w-1/2 lg:w-1/3">
       <div
         className={`${
           active ? "border-2 border-primary" : ""
@@ -150,31 +150,59 @@ const PricingCard = ({
           {description}
         </p>
         <div className="mb-9 flex flex-col gap-[14px]">{children}</div>
-        <NavLink to={`/cart/${subscriptionType}`}>
-          {active ? (
-            <Button
-              hoverColor={"white"}
-              bgColor={"primary"}
-              borderColor={"white"}
-              textColor={"white"}
-              hoverText={"primary"}
-              bgHover={"white"}
-              hoverBorder={"primary"}
-              title={buttonText}
-            />
-          ) : (
-            <Button
-              hoverColor={"white"}
-              bgColor={"white"}
-              borderColor={"primary"}
-              textColor={"primary"}
-              hoverText={"white"}
-              bgHover={"primary"}
-              hoverBorder={"white"}
-              title={buttonText}
-            />
-          )}
-        </NavLink>
+        {price === "Free" ? (
+          <a href="https://kravy.magicscale.in">
+            {active ? (
+              <Button
+                hoverColor={"white"}
+                bgColor={"primary"}
+                borderColor={"white"}
+                textColor={"white"}
+                hoverText={"primary"}
+                bgHover={"white"}
+                hoverBorder={"primary"}
+                title={buttonText}
+              />
+            ) : (
+              <Button
+                hoverColor={"white"}
+                bgColor={"white"}
+                borderColor={"primary"}
+                textColor={"primary"}
+                hoverText={"white"}
+                bgHover={"primary"}
+                hoverBorder={"white"}
+                title={buttonText}
+              />
+            )}
+          </a>
+        ) : (
+          <NavLink to={`/cart/${subscriptionType}`}>
+            {active ? (
+              <Button
+                hoverColor={"white"}
+                bgColor={"primary"}
+                borderColor={"white"}
+                textColor={"white"}
+                hoverText={"primary"}
+                bgHover={"white"}
+                hoverBorder={"primary"}
+                title={buttonText}
+              />
+            ) : (
+              <Button
+                hoverColor={"white"}
+                bgColor={"white"}
+                borderColor={"primary"}
+                textColor={"primary"}
+                hoverText={"white"}
+                bgHover={"primary"}
+                hoverBorder={"white"}
+                title={buttonText}
+              />
+            )}
+          </NavLink>
+        )}
         <div>
           <span className="absolute right-0 top-7 z-[-1]">
             <svg

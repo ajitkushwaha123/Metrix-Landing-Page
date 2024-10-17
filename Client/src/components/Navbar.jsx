@@ -4,7 +4,7 @@ import { FaShopLock } from "react-icons/fa6";
 import { GoDotFill } from "react-icons/go";
 import { navLinks } from "../constants";
 import Icon from "./Icon";
-
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
@@ -39,7 +39,6 @@ const Navbar = () => {
   //    },
   //  ];
 
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -60,6 +59,8 @@ const Navbar = () => {
     window.location.href = "https://kravy.magicscale.in";
   };
 
+  const API_URL =
+    import.meta.env.VITE_FRONTEND_URL || "https://billing.magicscale.in";
 
   return (
     <>
@@ -95,9 +96,12 @@ const Navbar = () => {
               className={`font-poppins font-normal cursor-pointer text-[16px] ${
                 active === nav.title ? "text-primary" : "text-dimBlack"
               } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
-              onClick={() => setActive(nav.title)}
+              onClick={() => {
+                setActive(nav.title);
+                window.location.assign(`${API_URL}/#${nav.id}`);
+              }}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a href={`${API_URL}/#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
         </ul>
@@ -150,13 +154,14 @@ const Navbar = () => {
                     active === nav.title ? "text-indigo-500" : "text-primary"
                   }  mb-4`}
                   onClick={() => {
-                    setActive(nav.title), setToggle(!toggle);
+                    setActive(nav.title);
+                    window.location.assign(`${API_URL}/#${nav.id}`);
                   }}
                 >
                   <p className="mr-[10px]">
                     <Icon name={nav.icon} />
                   </p>
-                  <a href={`#${nav.id}`}>{nav.title}</a>
+                  <a href={`${API_URL}/#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
 
@@ -177,16 +182,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-

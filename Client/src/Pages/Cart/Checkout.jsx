@@ -11,7 +11,7 @@ const Checkout = () => {
   const [cartValue, setCartValue] = useState(0);
 
   return (
-    <div className="font-poppins py-[30px] bg-secondary px-[100px] w-full">
+    <div className="font-poppins py-[30px] bg-secondary px-[20px] md:px-[100px] w-full">
       <button
         onClick={() => {
           navigate(`/cart/${subscriptionType}`);
@@ -20,11 +20,11 @@ const Checkout = () => {
       >
         <TiArrowBackOutline /> <span className="ml-[10px]">Back</span>
       </button>
-      <div className="w-full flex justify-center">
-        <div className="w-[60%]">
+      <div className="w-full lg:flex justify-center">
+        <div className="lg:w-[60%]">
           <CheckoutForm cartValue={cartValue} />
         </div>
-        <div className="w-[40%] ml-[40px]">
+        <div className="lg:w-[40%] lg:ml-[40px]">
           <TotalCart finalCart={setCartValue} />
         </div>
       </div>

@@ -49,3 +49,16 @@ export const submitCheckoutDetails = async (values) => {
     });
   }
 }
+
+
+export async function supportRequest(values) {
+  console.log(`${API_URL}/api/support`);
+  try {
+    const { data } = await axios.post(`${API_URL}/api/support`, values);
+    // console.log(data);
+    return Promise.resolve({ data });
+  } catch (error) {
+    // console.error("Error submitting form:", error);
+    return Promise.reject({ error });
+  }
+}

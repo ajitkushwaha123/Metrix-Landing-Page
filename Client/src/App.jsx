@@ -8,6 +8,8 @@ import Cart from "./Pages/Cart/Cart";
 import Checkout from "./Pages/Cart/Checkout";
 import PaymentStatus from "./Pages/Cart/PaymentStatus";
 import CheckInternet from "./Modal/CheckInternet";
+import Support from "./components/Support";
+import Footer from "./components/Footer";
 
 function App() {
   const [online, setOnline] = useState(navigator.onLine);
@@ -43,8 +45,12 @@ function App() {
           <Route path="/cart/:subscriptionType" element={<Cart />} />
           <Route path="/checkout/:subscriptionType" element={<Checkout />} />
           <Route path="/payment-status/:orderId" element={<PaymentStatus />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/contact" element={<Support />} />
         </Routes>
       </BrowserRouter>
+
+      <Footer />
     </>
   );
 }

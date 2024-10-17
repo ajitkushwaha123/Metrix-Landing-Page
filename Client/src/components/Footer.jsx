@@ -39,6 +39,10 @@ const navigation = {
 };
 
 export default function Example() {
+
+  const API_URL =
+    import.meta.env.VITE_FRONTEND_URL || "https://billing.magicscale.in";
+
   return (
     <footer className="bg-[#ffffff] bg-pattern2 rounded-lg">
       <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
@@ -49,7 +53,7 @@ export default function Example() {
           {navigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
               <a
-                href={item.href}
+                href={`${API_URL}/${item.href}`}
                 className="text-base text-gray-500 font-medium hover:text-gray-900"
               >
                 {item.name}
