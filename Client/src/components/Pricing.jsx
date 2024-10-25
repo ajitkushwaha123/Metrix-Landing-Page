@@ -89,7 +89,7 @@ const Pricing = () => {
 
             <PricingCard
               type="Enterprise"
-              price="8000"
+              price="10000"
               subscription="1 Year"
               description="For large restaurants and chains, manage all your outlets and analytics in one place."
               buttonText="Choose Enterprise Plan"
