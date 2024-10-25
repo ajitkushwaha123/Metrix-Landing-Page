@@ -70,7 +70,7 @@ const Pricing = () => {
             <PricingCard
               active
               type="Growth"
-              price="5000"
+              price="6000"
               subscription="6 months"
               description="Ideal for growing restaurants, manage multiple outlets and boost your sales."
               buttonText="Choose Growth Plan"
