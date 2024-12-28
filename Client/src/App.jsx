@@ -4,12 +4,12 @@ import { Helmet } from "react-helmet";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Navbar from "./components/Navbar";
-import Cart from "./Pages/Cart/Cart";
 import Checkout from "./Pages/Cart/Checkout";
 import PaymentStatus from "./Pages/Cart/PaymentStatus";
 import CheckInternet from "./Modal/CheckInternet";
 import Support from "./components/Support";
 import Footer from "./components/Footer";
+import Cart from "./Pages/Cart/Cart";
 
 function App() {
   const [online, setOnline] = useState(navigator.onLine);

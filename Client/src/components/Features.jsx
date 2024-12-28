@@ -7,12 +7,16 @@ import Button from "./Button";
 import { CiBoxList } from "react-icons/ci";
 import Title from "./Title";
 import { customer, feature1, feature2, invoiceImg, stats , billing } from "../assets";
+import { NavLink } from "react-router-dom";
 
 export default function Features() {
+
+
+
   return (
     <div
       id="feature"
-      className="flex bg-pattern2 w-full justify-center flex py-[50px] items-center flex-col"
+      className="flex bg-pattern2 w-full justify-center py-[50px] items-center flex-col"
     >
       <Title preTitle={"Our"} title={"Features"} />
       <Tabs
@@ -50,16 +54,18 @@ export default function Features() {
                 </li>
 
                 <div className="mt-[20px] w-[100%] flex lg:justify-start justify-center items-center text-center">
-                  <Button
-                    hoverColor={"white"}
-                    bgColor={"primary"}
-                    borderColor={"white"}
-                    textColor={"white"}
-                    hoverText={"primary"}
-                    bgHover={"white"}
-                    hoverBorder={"primary"}
-                    title={"Explore Features"}
-                  />
+                  <a href="https://blog.magicscale.in/2024/10/the-best-restaurant-pos-features.html#2._Precise_Sales_Analytics">
+                    <Button
+                      hoverColor={"white"}
+                      bgColor={"primary"}
+                      borderColor={"white"}
+                      textColor={"white"}
+                      hoverText={"primary"}
+                      bgHover={"white"}
+                      hoverBorder={"primary"}
+                      title={"Explore Features"}
+                    />
+                  </a>
                 </div>
               </ul>
             </div>
@@ -96,16 +102,18 @@ export default function Features() {
                 </li>
 
                 <div className="mt-[20px] w-[100%] flex lg:justify-start justify-center items-center text-center">
-                  <Button
-                    hoverColor={"white"}
-                    bgColor={"primary"}
-                    borderColor={"white"}
-                    textColor={"white"}
-                    hoverText={"primary"}
-                    bgHover={"white"}
-                    hoverBorder={"primary"}
-                    title={"Explore Features"}
-                  />
+                  <a href="https://blog.magicscale.in/2024/10/the-best-restaurant-pos-features.html#3._Seamless_Customer_and_Order_Management">
+                    <Button
+                      hoverColor={"white"}
+                      bgColor={"primary"}
+                      borderColor={"white"}
+                      textColor={"white"}
+                      hoverText={"primary"}
+                      bgHover={"white"}
+                      hoverBorder={"primary"}
+                      title={"Explore Features"}
+                    />
+                  </a>
                 </div>
               </ul>
             </div>
@@ -140,16 +148,18 @@ export default function Features() {
                 </li>
 
                 <div className="mt-[20px] w-[100%] flex lg:justify-start justify-center items-center text-center">
-                  <Button
-                    hoverColor={"white"}
-                    bgColor={"primary"}
-                    borderColor={"white"}
-                    textColor={"white"}
-                    hoverText={"primary"}
-                    bgHover={"white"}
-                    hoverBorder={"primary"}
-                    title={"Explore Features"}
-                  />
+                  <a href="https://blog.magicscale.in/2024/10/the-best-restaurant-pos-features.html#4._Errorless_Billing_Management:_">
+                    <Button
+                      hoverColor={"white"}
+                      bgColor={"primary"}
+                      borderColor={"white"}
+                      textColor={"white"}
+                      hoverText={"primary"}
+                      bgHover={"white"}
+                      hoverBorder={"primary"}
+                      title={"Explore Features"}
+                    />
+                  </a>
                 </div>
               </ul>
             </div>
@@ -185,16 +195,18 @@ export default function Features() {
                 </li>
 
                 <div className="mt-[20px] w-[100%] flex lg:justify-start justify-center items-center text-center">
-                  <Button
-                    hoverColor={"white"}
-                    bgColor={"primary"}
-                    borderColor={"white"}
-                    textColor={"white"}
-                    hoverText={"primary"}
-                    bgHover={"white"}
-                    hoverBorder={"primary"}
-                    title={"Coming Soon"}
-                  />
+                  <a href="https://blog.magicscale.in/2024/10/the-best-restaurant-pos-features.html#5._Accurate_Invoice_Generator">
+                    <Button
+                      hoverColor={"white"}
+                      bgColor={"primary"}
+                      borderColor={"white"}
+                      textColor={"white"}
+                      hoverText={"primary"}
+                      bgHover={"white"}
+                      hoverBorder={"primary"}
+                      title={"Explore Features"}
+                    />
+                  </a>
                 </div>
               </ul>
             </div>

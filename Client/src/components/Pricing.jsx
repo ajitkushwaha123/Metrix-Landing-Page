@@ -49,17 +49,17 @@ const Pricing = () => {
         <div className="-mx-2 flex  flex-wrap justify-center">
           <div className="-mx-2 flex flex-wrap">
             <PricingCard
-              type="7 Days Trial"
-              price="Free"
-              subscription="7 Days"
+              type="Just 499 for First month / User"
+              price="499"
+              subscription="30 Days"
               description="Perfect plan to starting out , to test and understand the features of kravy ."
-              buttonText="Choose Trial Plan"
+              buttonText="Choose Starter Plan"
               paymentlink="https://payments.cashfree.com/forms/kravy"
-              subscriptionType={"free"}
+              subscriptionType={"starter"}
             >
               <List>1 Outlet</List>
               <List>Complete Access of CRM</List>
-              <List>7 Days Trial</List>
+              <List>30 Days Complete</List>
               <List>Instant Customer support</List>
               <List>Uploaded Products</List>
               <List>Software training</List>
