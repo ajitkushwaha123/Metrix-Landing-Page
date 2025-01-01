@@ -13,9 +13,9 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <Blog />
       {/* <BrandCarousel /> */}
       <Features />
+      <Blog />
       <Pricing />
       <Review />
       <ContactForm />

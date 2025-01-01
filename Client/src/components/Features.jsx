@@ -11,12 +11,10 @@ import { NavLink } from "react-router-dom";
 
 export default function Features() {
 
-
-
   return (
     <div
       id="feature"
-      className="flex bg-pattern2 w-full justify-center py-[50px] items-center flex-col"
+      className="flex bg-pattern2 pt-20 w-full justify-center items-center flex-col"
     >
       <Title preTitle={"Our"} title={"Features"} />
       <Tabs

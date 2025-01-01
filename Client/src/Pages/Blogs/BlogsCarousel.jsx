@@ -60,7 +60,7 @@ const BlogsCarousel = () => {
   };
 
   return (
-    <div className="z-100 overflow-x-hidden fix py-[30px] h-auto justify-enter items-center flex-row cursor-pinter outline-none border-none">
+    <div className="z-100 fix py-[30px] h-auto justify-enter items-center flex-row cursor-pinter outline-none border-none">
       <div className="container-fluid">
         <div className="tp-brand-4-active relative z-1">
           <Slider {...settings}>

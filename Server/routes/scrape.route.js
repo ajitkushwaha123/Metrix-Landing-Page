@@ -14,6 +14,7 @@ scrape.get("/", async (req, res) => {
 
     $("article").each((ind, element) => {
       const title = $(element).find(".pCntn").find("h2").find("a").text();
+      const authorName = $(element).find("bdi").attr("data-text");
 
       const imgSrc =
         $(element).find("img").attr("data-src") ||
@@ -21,11 +22,7 @@ scrape.get("/", async (req, res) => {
 
       const link = $(element).find("a").attr("href");
 
-      const date = $(element)
-        .find(".pCntn")
-        .find("time")
-        .attr("data-text")
-     
+      const date = $(element).find(".pCntn").find("time").attr("data-text");
 
       const description = $(element)
         .find(".pCntn")
@@ -40,16 +37,23 @@ scrape.get("/", async (req, res) => {
           link: link,
           date: date,
           description: description,
+          author: {
+            name: authorName,
+          },
         });
       }
     });
 
-    res.status(200).json({success : true , blogs });
+    res.status(200).json({ success: true, blogs });
   } catch (err) {
     console.error("Scraping error:", err.message);
     res
       .status(500)
-      .json({ success : false , message: "Failed to scrape the website", error: err.message });
+      .json({
+        success: false,
+        message: "Failed to scrape the website",
+        error: err.message,
+      });
   }
 });
 
@@ -70,13 +74,11 @@ scrape.get("/just", async (req, res) => {
     res.status(200).json({ success: true, blogs });
   } catch (err) {
     console.error("Scraping error:", err.message);
-    res
-      .status(500)
-      .json({
-        success: false,
-        message: "Failed to scrape the website",
-        error: err.message,
-      });
+    res.status(500).json({
+      success: false,
+      message: "Failed to scrape the website",
+      error: err.message,
+    });
   }
 });
 
