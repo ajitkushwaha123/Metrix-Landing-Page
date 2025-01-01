@@ -25,10 +25,10 @@ const BlogsCarousel = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 3000,
+    speed: 500,
     slidesToShow: 4,
     // autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 500,
     slidesToScroll: 1,
     cssEase: "linear",
     beforeChange: (current, next) => setCurrentIndex(next),
