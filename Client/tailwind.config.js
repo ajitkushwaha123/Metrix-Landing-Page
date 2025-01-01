@@ -33,7 +33,7 @@ module.exports = {
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [ nextui() , require("@tailwindcss/line-clamp")],
   screens: {
     xs: "480px",
     ss: "620px",

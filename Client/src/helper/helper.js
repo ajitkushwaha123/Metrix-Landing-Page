@@ -16,9 +16,11 @@ export const getAllSubscriptions = async () => {
 };
 
 export const getSubscriptionsBysubscriptionType = async (subscriptionType) => {
-    console.log("Subscription Type:", subscriptionType);
+  console.log("Subscription Type:", subscriptionType);
   try {
-    const response = await axios.get(`${API_URL}/api/subscription/${subscriptionType}`);
+    const response = await axios.get(
+      `${API_URL}/api/subscription/${subscriptionType}`
+    );
 
     return Promise.resolve({
       status: "true",
@@ -31,25 +33,35 @@ export const getSubscriptionsBysubscriptionType = async (subscriptionType) => {
 
 export const submitCheckoutDetails = async (values) => {
   console.log("Submitting :", values);
-  try{
-
-    if(!values.name || !values.company || !values.email || !values.phone || !values.address || !values.city || !values.state || !values.postalCode){
-      return Promise.reject({ status : "false" , message : "All fields are required"});
+  try {
+    if (
+      !values.name ||
+      !values.company ||
+      !values.email ||
+      !values.phone ||
+      !values.address ||
+      !values.city ||
+      !values.state ||
+      !values.postalCode
+    ) {
+      return Promise.reject({
+        status: "false",
+        message: "All fields are required",
+      });
     }
 
-    const response = await axios.post(`${API_URL}/api/checkout` , values);
+    const response = await axios.post(`${API_URL}/api/checkout`, values);
     return Promise.resolve({
       status: "true",
       message: response.data.message || "An error occurred",
     });
-  }catch(err){
+  } catch (err) {
     return Promise.reject({
       status: "false",
       message: err.message || "An error occurred",
     });
   }
-}
-
+};
 
 export async function supportRequest(values) {
   console.log(`${API_URL}/api/support`);
@@ -60,5 +72,14 @@ export async function supportRequest(values) {
   } catch (error) {
     // console.error("Error submitting form:", error);
     return Promise.reject({ error });
+  }
+}
+
+export async function getBlogData() {
+  try {
+    const response = await axios.get(`${API_URL}/api/scrape`);
+    return Promise.resolve({ status: "true", data: response.data.blogs });
+  } catch (err) {
+    return Promise.reject({ status: "false", message: err.message });
   }
 }

@@ -7,11 +7,13 @@ import Review from "../../components/Review";
 import ContactForm from "../../components/ContactForm";
 import Faqs from "../../components/Faqs";
 import { Footer } from "flowbite-react";
+import Blog from "../Blogs/Blog";
 
 const Home = () => {
   return (
     <div>
       <Hero />
+      <Blog />
       {/* <BrandCarousel /> */}
       <Features />
       <Pricing />

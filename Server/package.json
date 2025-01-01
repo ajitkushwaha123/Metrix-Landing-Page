@@ -12,6 +12,7 @@
   "description": "",
   "dependencies": {
     "cashfree-pg": "^4.2.3",
+    "cheerio": "^1.0.0",
     "cors": "^2.8.5",
     "crypt": "^0.0.2",
     "crypto": "^1.0.1",
