@@ -68,7 +68,7 @@ const TotalCart = ({ finalCart }) => {
                 ? "12 Months"
                 : cartData?.duration === 180
                 ? "6 Months"
-                : "7 Days"}{" "}
+                : "30 Days"}{" "}
               plan
             </p>
             <p className="flex mt-[10px]">
